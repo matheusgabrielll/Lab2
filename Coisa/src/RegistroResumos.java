@@ -15,7 +15,6 @@ public class RegistroResumos {
     }
 
     public void adicionaResumo(String tema, String conteudo) {
-        // Não pode ter dois resumos com o mesmo tema: se já existe, atualiza o conteúdo
         for (int i = 0; i < quantidadeResumos; i++) {
             if (temas[i].equals(tema)) {
                 conteudos[i] = conteudo;
@@ -23,7 +22,6 @@ public class RegistroResumos {
             }
         }
 
-        // Guarda na próxima posição (se estiver cheio, substitui o mais antigo)
         temas[proximaPosicao] = tema;
         conteudos[proximaPosicao] = conteudo;
 
@@ -31,7 +29,6 @@ public class RegistroResumos {
             quantidadeResumos = quantidadeResumos + 1;
         }
 
-        // Anda uma posição e volta para o zero quando chega no fim do array
         proximaPosicao = (proximaPosicao + 1) % temas.length;
     }
 

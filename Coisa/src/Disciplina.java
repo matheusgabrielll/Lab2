@@ -16,7 +16,6 @@ public class Disciplina {
     public Disciplina(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
         this.horasEstudo = 0;
-        // Notas não cadastradas valem zero
         this.nota1 = 0;
         this.nota2 = 0;
         this.nota3 = 0;
@@ -24,12 +23,10 @@ public class Disciplina {
     }
 
     public void cadastraHoras(int horas) {
-        // Horas são cumulativas
         this.horasEstudo = this.horasEstudo + horas;
     }
 
     public void cadastraNota(int nota, double valorNota) {
-        // Cadastrar de novo a mesma nota substitui o valor anterior
         if (nota == 1) {
             this.nota1 = valorNota;
         } else if (nota == 2) {
